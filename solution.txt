@@ -1,0 +1,291 @@
+
+user@DESKTOP-OA752CI MINGW64 ~
+$ git config --global user.name "Mkaif-Agb"
+
+user@DESKTOP-OA752CI MINGW64 ~
+$ git config --global user.email "mkaifagb@gmail.com"
+
+user@DESKTOP-OA752CI MINGW64 ~
+$ git config --global --edit
+
+user@DESKTOP-OA752CI MINGW64 ~
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Mkaif-Agb
+user.email=mkaifagb@gmail.com
+
+user@DESKTOP-OA752CI MINGW64 ~
+$ cd Desktop/git_task/
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task
+$ git init
+Initialized empty Git repository in C:/Users/user/Desktop/git_task/.git/
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ ls -a
+./  ../  .git/
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ touch file1.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ touch file2.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ touch file3.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+        file3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git add -A
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git commit -m "First Commit"
+[master (root-commit) ea9e2c1] First Commit
+ 3 files changed, 3 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git branch Dev
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git checkout Dev
+Switched to branch 'Dev'
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git status
+On branch Dev
+nothing to commit, working tree clean
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git status
+On branch Dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git add file1.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git commit -m "modified file1.txt"
+[Dev 9b12078] modified file1.txt
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git branch test
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git checkout test
+Switched to branch 'test'
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (test)
+$ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (test)
+$ git add -A
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (test)
+$ git status
+On branch test
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file2.txt
+        modified:   file3.txt
+
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (test)
+$ git commit -m "Modified testfiles"
+[test 0a5b7b4] Modified testfiles
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (test)
+$ git checkout Dev
+Switched to branch 'Dev'
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git dif
+git: 'dif' is not a git command. See 'git --help'.
+
+The most similar commands are
+        diff
+        config
+        difftool
+        init
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git diff
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git diff
+diff --git a/file1.txt b/file1.txt
+index d4516a9..2217c29 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,3 +1,3 @@
+ Hello Dev
+
+-Hello Developer
+\ No newline at end of file
++Hello Github
+\ No newline at end of file
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git add file1.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git commit -m "modified file1"
+[Dev 78f9877] modified file1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (Dev)
+$ git checkout master
+Switched to branch 'master'
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git branch
+  Dev
+* master
+  test
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git merge Dev test
+Fast-forwarding to: Dev
+Trying simple merge with test
+Merge made by the 'octopus' strategy.
+ file1.txt | 4 +++-
+ file2.txt | 1 +
+ file3.txt | 3 ++-
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git remote add origine https://github.com/Mkaif-Agb/git_task.git
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git push -u origine master
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (17/17), 1.41 KiB | 68.00 KiB/s, done.
+Total 17 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Mkaif-Agb/git_task.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origine'.
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ cd ..
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop
+$ mkdir clone_git_task
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop
+$ cd clone_git_task/
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/clone_git_task
+$ git clone https://github.com/Mkaif-Agb/git_task.git
+Cloning into 'git_task'...
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 17 (delta 1), reused 17 (delta 1), pack-reused 0
+Receiving objects: 100% (17/17), done.
+Resolving deltas: 100% (1/1), done.
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/clone_git_task
+$ cd ..
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop
+$ cd git_task/
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ ls
+file1.txt  file2.txt  file3.txt  solution.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git status
+On branch master
+Your branch is up to date with 'origine/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        solution.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git add solution.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git status
+On branch master
+Your branch is up to date with 'origine/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   solution.txt
+
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git commit -m "added solutions.txt"
+[master eb919ec] added solutions.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 solution.txt
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 69.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Mkaif-Agb/git_task.git
+   f9c3fa3..eb919ec  master -> master
+
+user@DESKTOP-OA752CI MINGW64 ~/Desktop/git_task (master)
+$
